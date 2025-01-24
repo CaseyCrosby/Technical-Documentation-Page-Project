@@ -9,24 +9,25 @@
 </head>
 <body>
     <main id="main-doc">
+    <h1>CSS Documentation</h1>
 <section class="main-section">
-    <header>What is CSS?</header>
+    <header><h2>What is CSS?</h2></header>
     <p>CSS (Cascading Style Sheets) allows you to create great-looking web pages. Using CSS, you can control exactly how HTML elements look in the browser, presenting your documents(A text file structured using a markup language like HTML, SVG, or XML) to your users with whatever design and layout you like. </p>
     <p>CSS can be used for text styling — for example, for changing the color and size of headings and links. It can be used to create a layout — for example, turning a single column of text into a layout with a main content area and a sidebar for related information. It can even be used for effects such as animations and much more.</p>
    
 </section>
 <section class="main-section">
-    <header>The basics of CSS syntax</header>
+    <header><h2>The basics of CSS syntax</h2></header>
     <p>CSS is a rule-based language — you define rules by specifying groups of styles that should be applied to particular elements or groups of elements on your web page. 
 
         For example, you can decide to style the main heading on your page as large red text. The following code shows a very simple CSS rule that would achieve this:
     </p>
     <pre>
     <code>
-        h1 {
+    h1 {
         color: red;
         font-size: 5em;
-      }
+       }
       </code>
     </pre>
       <ul>
@@ -40,19 +41,20 @@
         A CSS stylesheet contains many such rules, written one after the other.</p>
    <pre>
     <code>
-        h1 {
-        color: red;
-        font-size: 5em;
-      }
+    h1 {
+         color: red;
+         font-size: 5em;
+       }
+
       
-      p {
-        color: black;
+    p {
+         color: black;
       }
       </code>
     </pre>
 </section>
 <section class="main-section">
-    <header>How is CSS applied to HTML?</header>
+    <header><h2>How is CSS applied to HTML?</h2></header>
     <p>When a browser displays a document, it must combine the document's content with its style information. It processes the document in a number of stages, which we've listed below. Bear in mind that this is a very simplified version of what happens when a browser loads a webpage, and that different browsers will handle the process in different ways.</p>
     <ol>
         <li>The browser loads the HTML.</li>
@@ -63,32 +65,89 @@
         <li>The visual display of the page is shown on the screen (this stage is called painting).</li>
     </ol>
 <pre>
-    <code>
-        &lt;p&gt;
-  Let's use:
-  &lt;span&gt;Cascading&lt;/span&gt;
-  &lt;span&gt;Style&lt;/span&gt;
-  &lt;span&gt;Sheets&lt;/span&gt;
-&lt;/p&gt;
+    <code><p>html</p>
+        &lt;p&gt;Let's use:
+            &lt;span&gt;Cascading&lt;/span&gt;
+            &lt;span&gt;Style&lt;/span&gt;
+            &lt;span&gt;Sheets&lt;/span&gt;
+        &lt;/p&gt;
     </code>
 </pre>
-    <code>
+<pre>
+    <code><p>css</p>
         span {
-        border: 1px solid black;
-        background-color: lime;
-      }
+               border: 1px solid black;
+               background-color: lime;
+             }
       </code>
+    </pre>
     <p>In this case above, the browser will first create a DOM tree. Next, it parses the CSS. Since the only rule available in the CSS has a span selector, the browser sorts the CSS very quickly! It applies that rule to each one of the three <span>s, then paints the final visual representation to the screen.</p>
    
 </section>
 <section class="main-section">
-    <header></header>
-    <p></p> 
-    <p></p>
+    <header><h2>What is a selector?</h2></header>
+    <p>A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. The element or elements which are selected by the selector are referred to as the subject of the selector.</p>
+    <h3>What are the different types of selectors</h3>
+    <ul>
+        <li>
+            <h4>Type Selectors</h4>
+            <p>A type selector is sometimes referred to as a tag name selector or element selector because it selects an HTML tag/element in your document.</p>
+            <pre>
+                <code>
+        h1 {
+             color: red;
+             font-size: 5em;
+            }
+                </code>
+            </pre>
+        </li>
+        <li>
+            <h4>Class Selectors</h4>
+            <p>The case-sensitive class selector starts with a dot (.) character. It will select everything in the document with that class applied to it. </p>
+            <pre>
+                <code>
+        .highlight {
+                     background-color: yellow;
+                   }
+                </code>
+            </pre>
+        </li>
+        <li>
+            <h4>ID Selectors</h4>
+            <p>The case-sensitive ID selector begins with a # rather than a dot character, but is used in the same way as a class selector. The difference is that an ID can be used only once per page, and elements can only have a single id value applied to them. It can select an element that has the id set on it, and you can precede the ID with a type selector to only target the element if both the element and ID match.</p>
+            <pre>
+                <code>
+              #one {
+                    background-color: yellow;
+                   }
+
+                      
+        h1#heading {
+                    color: rebeccapurple;
+                   }        
+                </code>
+            </pre>
+        </li>
+    </ul>
+    
+
+    <h3>Using common selectors</h3>
+    <p>Css can target and style an HTML element.We do this by targeting an element selector (also known as a type selector) — this is a selector that directly matches an HTML element name. To target all paragraphs in a document, you would use the selector p. To turn all paragraphs green, you would use:</p> 
     <pre>
         <code>
-            &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot; /&gt;
+            p {
+                color: green;
+              }
     </code>
+</pre>
+<p>You can target multiple selectors at the same time by separating the selectors with a comma. If you wanted all paragraphs and all list items to be green, your rule would look like this:</p>
+<pre>
+    <code>
+            p, li {
+                   color: green;
+                  }
+
+</code>
 </pre>
 
 </section>
