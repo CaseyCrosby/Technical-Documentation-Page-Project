@@ -9,7 +9,7 @@
     line-height: 1.4em;
     word-spacing: 0.2em;
     font-size: 125%;
-    position: absolute;
+    position: relative;
     margin-left: 310px;
 }
 
@@ -57,10 +57,63 @@ ul, ol {
     min-width: 290px;
     top: 0px;
     left: 0px;
+    padding: 0;
+    margin: 0;
     width: 300px;
     height: 100%;
     border-right: solid;
-    border-right-color: currentcolor;
     border-color: rgba(0, 22, 22, 0.4);
-
+    z-index: 1;
+    background-color: aliceblue;   
 }
+
+#navbar header {
+    text-align: center;
+    font-size: xx-large;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar li {
+    list-style: none;
+    margin: 0;
+    padding: 20px 50px;
+    font-size: 1.8em;
+    border: 5px solid black;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+#navbar ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin: 0;
+    width: 50px;
+    height: 70px;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 0%;
+    border-color: black;
+}
+
+@media screen and (max-width: 850px){
+  
+    #navbar {
+      display: block;
+    }
+    #navbar {
+      display: none;
+    }
+  
+  }
