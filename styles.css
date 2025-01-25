@@ -4,16 +4,54 @@
 }
 
 #main-doc{
-
+    margin: 2%;
+    padding: 2%;
+    line-height: 1.4em;
+    word-spacing: 0.2em;
+    font-size: 125%;
 }
 
 h1 {
+    font-size: 3.4rem;
     text-align: center;
+    margin: 7% auto;
+    letter-spacing: 0.1rem;
 }
 
 pre {
     background-color:dimgray;
-    padding: auto 4em;
-    width: 75%;
-    margin: auto;
+    padding: auto;
+    margin: 10% auto 5%;
+    font-size: ;
+    line-height: inherit;
+}
+
+#main-section{
+    margin: 5% auto;
+    padding: 2% auto;
+}
+
+p {
+    text-indent: 40px;
+
+}
+
+h2 {
+    font-size: 200%;
+    margin: 7% auto 2%;
+}
+
+h3 {
+    font-size: 175%;
+    margin: 7% auto 2%;
+}
+
+h4 {
+    font-size: 125%;
+    margin: 7% auto 2%;
+}
+
+ul, ol {
+    margin: 5%;
+    
 }
