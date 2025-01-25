@@ -9,6 +9,8 @@
     line-height: 1.4em;
     word-spacing: 0.2em;
     font-size: 125%;
+    position: absolute;
+    margin-left: 310px;
 }
 
 h1 {
@@ -16,19 +18,13 @@ h1 {
     text-align: center;
     margin: 7% auto;
     letter-spacing: 0.1rem;
+    line-height: 1;
 }
 
 pre {
     background-color:dimgray;
     padding: auto;
     margin: 10% auto 5%;
-    font-size: ;
-    line-height: inherit;
-}
-
-#main-section{
-    margin: 5% auto;
-    padding: 2% auto;
 }
 
 p {
@@ -54,4 +50,17 @@ h4 {
 ul, ol {
     margin: 5%;
     
+}
+
+#navbar {
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: solid;
+    border-right-color: currentcolor;
+    border-color: rgba(0, 22, 22, 0.4);
+
 }
