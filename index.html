@@ -8,15 +8,26 @@
     <title>CSS Documentation</title>
 </head>
 <body>
+    <nav id="navbar">
+        <header>CSS Basics Documentation</header>
+        <ul>
+        <li><a class="nav-link" href="#What_is_CSS?">What is CSS?</a></li>
+        <li><a class="nav-link" href="#The_basics_of_CSS_syntax">The basics of CSS syntax</a></li>
+        <li><a class="nav-link" href="#How_is_CSS_applied_to_HTML?">How is CSS applied to HTML?</a></li>
+        <li><a class="nav-link" href="#What_is_a_selector?">What is a selector?</a></li>
+        <li><a class="nav-link" href="#CSS_values_and_units">CSS values and units</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+    </nav>
     <main id="main-doc">
-    <h1>CSS Documentation</h1>
-<section class="main-section">
+    <h1>CSS Basics Documentation</h1>
+<section class="main-section" id="What_is_CSS?">
     <header><h2>What is CSS?</h2></header>
     <p>CSS (Cascading Style Sheets) allows you to create great-looking web pages. Using CSS, you can control exactly how HTML elements look in the browser, presenting your documents(A text file structured using a markup language like HTML, SVG, or XML) to your users with whatever design and layout you like. </p>
     <p>CSS can be used for text styling — for example, for changing the color and size of headings and links. It can be used to create a layout — for example, turning a single column of text into a layout with a main content area and a sidebar for related information. It can even be used for effects such as animations and much more.</p>
    
 </section>
-<section class="main-section">
+<section class="main-section" id="The_basics_of_CSS_syntax">
     <header><h2>The basics of CSS syntax</h2></header>
     <p>CSS is a rule-based language — you define rules by specifying groups of styles that should be applied to particular elements or groups of elements on your web page. 
 
@@ -53,7 +64,7 @@
       </code>
     </pre>
 </section>
-<section class="main-section">
+<section class="main-section" id="How_is_CSS_applied_to_HTML?">
     <header><h2>How is CSS applied to HTML?</h2></header>
     <p>When a browser displays a document, it must combine the document's content with its style information. It processes the document in a number of stages, which we've listed below. Bear in mind that this is a very simplified version of what happens when a browser loads a webpage, and that different browsers will handle the process in different ways.</p>
     <ol>
@@ -84,10 +95,10 @@
     <p>In this case above, the browser will first create a DOM tree. Next, it parses the CSS. Since the only rule available in the CSS has a span selector, the browser sorts the CSS very quickly! It applies that rule to each one of the three <span>s, then paints the final visual representation to the screen.</p>
    
 </section>
-<section class="main-section">
+<section class="main-section" id="What_is_a_selector?">
     <header><h2>What is a selector?</h2></header>
     <p>A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browser which HTML elements should be selected to have the CSS property values inside the rule applied to them. The element or elements which are selected by the selector are referred to as the subject of the selector.</p>
-    <h3>What are the different types of selectors</h3>
+    <h3>What are the some types of selectors?</h3>
     <ul>
         <li>
             <h4>Type Selectors</h4>
@@ -129,8 +140,15 @@
             </pre>
         </li>
         <li>
-            <h4>The universal selector</h4>
+            <h4>The Universal selector</h4>
             <p>The universal selector is indicated by an asterisk (*). It selects everything in the document. If * is chained using a descendant combinator, it selects everything inside that ancestor element. For example, p * selects all the nested elements inside the <code>&lt;p&gt;</code> element.</p>
+            <pre>
+            <code>
+                * {
+                    margin: 0;
+                  }
+            </code>
+        </pre>
         </li>
     </ul>
     
@@ -155,21 +173,108 @@
 </pre>
 
 </section>
-<section class="main-section">
-    <header></header>
-    <p></p>
-    <p></p>
-    <code></code>
+<section class="main-section" id="CSS_values_and_units">
+    <header><h2>CSS values and units</h2></header>
+    <p>CSS rules contain declarations, which in turn are composed of properties and values. Each property used in CSS has a value type that describes what kind of values it is allowed to have.</p>
+    <h3>What is a CSS value?</h3>
+    <p>A value type in CSS is a way to define a collection of allowable values. This means that if you see (color) as valid you don't need to wonder which of the different types of color value can be used — keywords, hex values, rgb() functions, etc. You can use any available (color) values, assuming they are supported by your browser. </p>
+    <pre>
+        <code>
+            h1 {
+                color: black;
+                background-color: rgb(197 93 161);
+              }
+              
+        </code>
+    </pre>
+    <h3>Numbers, lengths, and percentages</h3>
+    <h4>Lengths</h4>
+    <p>The numeric type you will come across most frequently is (length). For example, 10px (pixels) or 30em. There are two types of lengths used in CSS — relative and absolute. It's important to know the difference in order to understand how big things will become.</p>
+    <h4>Absolute length units</h4>
+    <ul>
+        <li>cm = Centimeters (1cm = 37.8px = 25.2/64in)</li>
+        <li>mm= Millimeters (1mm = 1/10th of 1cm) </li>
+        <li>Q = Quarter-millimeters (1Q = 1/40th of 1cm) </li>
+        <li>in = Inches (1in = 2.54cm = 96px) </li>
+        <li>pc = Picas (1pc = 1/6th of 1in) </li>
+        <li>pt = Points (1pt = 1/72nd of 1in) </li>
+        <li>px = Pixels (1px = 1/96th of 1in) </li>
+    </ul>
+    <h4>Relative length units</h4>
+    <p>Relative length units are relative to something else. For example:</p>
+    <ul>
+        <li>
+            em is relative to the font size of this element, or the font size of the parent element when used for font-size. rem is relative to the font size of the root element.
+        </li>
+        <li>
+            vh and vw are relative to the viewport's height and width, respectively.
+        </li>
+    </ul>
+    <p>The benefit of using relative units is that with some careful planning you can make it so the size of text or other elements scales relative to everything else on the page.</p>
+    <h4>Percentages</h4>
+    <p>In a lot of cases, a percentage is treated in the same way as a length. The thing with percentages is that they are always set relative to some other value. For example, if you set an element's font-size as a percentage, it will be a percentage of the font-size of the element's parent. If you use a percentage for a width value, it will be a percentage of the width of the parent.</p>
+    <pre>
+        <code>
+            .box {
+                background-color: lightblue;
+                border: 5px solid darkblue;
+                padding: 10px;
+                margin: 1em 0;
+              }
+              .wrapper {
+                width: 400px;
+                border: 5px solid rebeccapurple;
+              }
+              
+              .px {
+                width: 200px;
+              }
+              
+              .percent {
+                width: 40%;
+              }
+              
+        </code>
+    </pre>
+    <h4>Numbers</h4>
+    <p>Some value types accept numbers, without any unit added to them. An example of a property which accepts a unitless number is the opacity property, which controls the opacity of an element (how transparent it is). This property accepts a number between 0 (fully transparent) and 1 (fully opaque).</p>
+    <pre>
+        <code><p>html</p>
+            &lt;div class=&quot;wrapper&quot;&gt;
+            &lt;div class=&quot;box&quot;&gt;I am a box with opacity&lt;/div&gt;
+            &lt;/div&gt;
+        </code>
+    </pre>
+    <pre>
+        <code><p>css</p>
+            .wrapper {
+                background-image: url(https://mdn.github.io/shared-assets/images/examples/balloons.jpg);
+                background-repeat: no-repeat;
+                background-position: bottom left;
+                padding: 20px;
+              }
+              
+              .box {
+                margin: 40px auto;
+                width: 200px;
+                background-color: lightblue;
+                border: 5px solid darkblue;
+                padding: 10px;
+                opacity: 0.6;
+              }
+              
+        </code>
+    </pre>
+</section>
+<section class="main-section" id="Reference">
+    <header><h3>Reference</h3></header>
+<ul>
+    <li>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics" target="_blank">MDN</a>        
+    </li>
+</ul>
 </section>
     </main>
-    <nav id="navbar">
-        <header></header>
-        <a class="nav-link" href=""></a>
-        <a class="nav-link" href=""></a>
-        <a class="nav-link" href=""></a>
-        <a class="nav-link" href=""></a>
-        <a class="nav-link" href=""></a>
-    </nav> 
+  
     <script src="script.js"></script>
 </body>
 </html>
