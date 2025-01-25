@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#main-doc{
+
+}
+
+h1 {
+    text-align: center;
+}
+
+pre {
+    background-color:dimgray;
+    padding: auto 4em;
+    width: 75%;
+    margin: auto;
+}
